@@ -15,4 +15,9 @@ public class EvaluationTest {
     Strength result = Evaluation.evaluatePassword("?AbCd1!");
     assertEquals(Strength.WEAK, result);
   }
+  @Test
+  public void testWeakLowercase() {
+    Strength result = Evaluation.evaluatePassword("?ABCD123!");
+    assertEquals(Strength.WEAK, result);
+  }
 }
