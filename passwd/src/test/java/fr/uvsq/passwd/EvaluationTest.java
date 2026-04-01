@@ -1,6 +1,7 @@
 package fr.uvsq.passwd;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -34,5 +35,11 @@ public class EvaluationTest {
   public void testWeakSpecial() {
     Strength result = Evaluation.evaluatePassword("0AbCd1234");
     assertEquals(Strength.WEAK, result);
+  }
+  @Test
+  public void testError() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      Evaluation.evaluatePassword("");
+    });
   }
 }
