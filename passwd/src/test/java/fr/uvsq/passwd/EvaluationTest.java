@@ -25,4 +25,9 @@ public class EvaluationTest {
     Strength result = Evaluation.evaluatePassword("?abcdefg!");
     assertEquals(Strength.WEAK, result);
   }
+  @Test
+  public void testWeakDigit() {
+    Strength result = Evaluation.evaluatePassword("?AbCdeFg!");
+    assertEquals(Strength.WEAK, result);
+  }
 }
