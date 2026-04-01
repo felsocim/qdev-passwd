@@ -30,4 +30,9 @@ public class EvaluationTest {
     Strength result = Evaluation.evaluatePassword("?AbCdeFg!");
     assertEquals(Strength.WEAK, result);
   }
+  @Test
+  public void testWeakSpecial() {
+    Strength result = Evaluation.evaluatePassword("0AbCd1234");
+    assertEquals(Strength.WEAK, result);
+  }
 }
