@@ -22,7 +22,7 @@ public class EvaluationTest {
   }
   @Test
   public void testWeakUppercase() {
-    Strength result = Evaluation.evaluatePassword("?abcdefg!");
+    Strength result = Evaluation.evaluatePassword("?abcd123!");
     assertEquals(Strength.WEAK, result);
   }
   @Test
